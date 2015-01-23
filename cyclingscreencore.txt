@@ -1,0 +1,15 @@
+#each element is a column from right to left
+#and each sub-element is a color top to bottom
+virtualscreen = []
+
+for a in range(100): #Number of pixel changes
+	
+	for x in range(0,8):
+		for y in range(0,8):
+			r,g,b = virtualscreen[x][y]
+			set_pixel(x,y,r,g,b)
+		show()
+	time.sleep(0.05) # time delay between each pixel change
+
+	#having the append part will keep the length constant
+	virtualscreen.append(virtualscreen.pop(0))
